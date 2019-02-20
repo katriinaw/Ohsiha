@@ -5,13 +5,12 @@
 
 {% block content %}
 {% if user.is_authenticated %} <!--Tsekkaa auth appin sisäisten toimintojen avulla, onko käyttäjä kirjautunut sisään-->
-  Hi {{ user.username }}!
-  <p>Moromoro</p>
-  <a href="{% url 'login' %}">kirjauvvuppa</a>
-  <a href="{% url 'ravintoappi' %}">ravinto</a>
+  Hei {{ user.username }}!
+  <p><a href="{% url 'ravintoappi' %}">Ravintoappiin</a></p>
+  <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
 
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+  <p>Et ole kirjautunut</p>
+  <a href="{% url 'login' %}">Kirjautumiseen</a>
 {% endif %}
 {% endblock %}
