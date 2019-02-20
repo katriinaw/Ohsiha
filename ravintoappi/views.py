@@ -5,4 +5,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Tervetuloa RavintoAppiin!")
+    etusivu = "<html><body>Hae elintarviketta</body></html>"
+    return HttpResponse(etusivu)
