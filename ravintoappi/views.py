@@ -5,7 +5,6 @@ from django.http import HttpResponse
 
 
 def index(request):
-    #return HttpResponse("Tervetuloa Ravintoappiin")
     return render(request, 'etusivu.html', {})
 
     #response = requests.get('https://fineli.fi/fineli/api/v1/foods/4019') #fineli tietokannasta kuoritun banaanin (elintarvike id=4019) ravintosisältö
