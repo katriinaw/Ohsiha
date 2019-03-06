@@ -6,7 +6,7 @@
 {% block content %}
 {% if user.is_authenticated %} <!--Tsekkaa auth appin sisäisten toimintojen avulla, onko käyttäjä kirjautunut sisään-->
   Hei {{ user.username }}!
-  <p><a href="{% url 'ravintoappi' %}">Ravintoappiin</a></p>
+  <p><a href="{% url 'menoappi' %}">Menoappiin</a></p>
   <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
 
 {% else %}
