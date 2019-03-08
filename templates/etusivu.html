@@ -5,7 +5,12 @@
 
 <p> Tapahtumat: </p>
 
-<p> <strong>{{ id }}</strong> </p>
+<ul>
+  {% for tapahtuma in tapahtumalista %}
+    <li> <strong> {{ tapahtuma.title }} </strong>  </li>
+  {% endfor %}
+</ul>
+
 
 <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
 
