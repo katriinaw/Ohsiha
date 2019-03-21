@@ -1,18 +1,26 @@
 
+{% load static %}
 <html>
-<body>
-<h1> Tervetuloa Menoappiin! </h1>
+  <head>
+    <title> Menoappi </title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/etusivu.css' %}">
+  </head>
+  <body>
+    <div>
+      <h1><a href=""> Tervetuloa Menoappiin! </a></h1>
+      <h2><a href=""> Tapahtumat: </a></h2>
+    </div>
+    <div>
+      <ul>
+        {% for tapahtuma in tapahtumalista %}
+          <li> <strong> {{ tapahtuma.title }} </strong>  </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-<p> Tapahtumat: </p>
+    <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
 
-<ul>
-  {% for tapahtuma in tapahtumalista %}
-    <li> <strong> {{ tapahtuma.title }} </strong>  </li>
-  {% endfor %}
-</ul>
-
-
-<p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
-
-</body>
+  </body>
 </html>
