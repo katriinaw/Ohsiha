@@ -8,19 +8,26 @@
     <link rel="stylesheet" href="{% static 'css/etusivu.css' %}">
   </head>
   <body>
-    <div>
-      <h1><a href=""> Tervetuloa Menoappiin! </a></h1>
-      <h2><a href=""> Tapahtumat: </a></h2>
-    </div>
-    <div>
-      <ul>
-        {% for tapahtuma in tapahtumalista %}
-          <li> <strong> {{ tapahtuma.title }} </strong>  </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
-
+      <div>
+        <h1><a href=""> Tervetuloa Menoappiin! </a></h1>
+      </div>
+      <div>
+        <form>
+          Hae tapahtumaa:<br>
+          <input type="text" name="hakusana"><br>
+          <input type="submit" value="Hae">
+        </form>
+      </div>
+        <div>
+          <h2><a href=""> Tapahtumat: </a></h2>
+          <ul>
+            {% for tapahtuma in tapahtumalista %}
+              <li> <strong> {{ tapahtuma.title }} </strong>  </li>
+            {% endfor %}
+          </ul>
+        </div>
+      <div>
+          <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
+      </div>
   </body>
 </html>
