@@ -1,4 +1,3 @@
-
 {% load static %}
 <html>
   <head>
@@ -12,19 +11,12 @@
         <h1><a href=""> Tervetuloa Menoappiin! </a></h1>
       </div>
       <div>
-        <form action='' method='get'>
+        <form>
           Hae tapahtumaa:<br>
           <input type="text" name="hakusana"><br>
           <input type="submit" value="Hae">
         </form>
       </div>
-
-      <h2><a href=""> Tapahtumat: </a></h2>
-      {% for tapahtuma in tapahtumalista %}
-        <div>
-            <li> <strong> {{ tapahtuma.title }} </strong>  </li>
-        </div>
-      {% endfor %}
       <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
   </body>
 </html>
