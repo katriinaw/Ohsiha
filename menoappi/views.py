@@ -6,12 +6,14 @@ def index(request):
 
     if request == "POST":
 
-        form = HakuForm(request.POST)
+        form = HakuForm(request.POST or None)
         if form.is_valid():
             pass
     else:
         form = HakuForm()
-    return render(request, 'etusivu.html', {'form':form})
+    return render(request, 'etusivu.html', {
+    'form':form
+    })
 
 def haku(request):
     form = HakuForm(request.POST)
@@ -22,18 +24,4 @@ def haku(request):
         tapahtumat = response.json()
         return render(request, 'tulossivu.html', {
         'tapahtumalista' : tapahtumat, 'form':form
-            })
-
-    '''
-    if 'hakusana' in request.POST:
-        hakusana = request.POST['hakusana']
-        #print(hakusana)
-        url = "https://visittampere.fi:443/api/v1/event?tag="+hakusana+"&start_datetime=1552255200000&end_datetime=1552773600000"
-        response = requests.get(url)
-        tapahtumat = response.json()
-        return render(request, 'etusivu.html', {
-        'tapahtumalista' : tapahtumat
         })
-    else:
-        raise ValueError
-'''
