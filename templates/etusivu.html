@@ -8,17 +8,32 @@
     <link rel="stylesheet" href="{% static 'css/etusivu.css' %}">
   </head>
   <body>
-      <div>
+      <div class="testi">
         <h1><a href=""> Tervetuloa Menoappiin! </a></h1>
       </div>
       <div>
-        <form action='' method='get'>
+
+        <form action="haku/" method="post" novalidate>
+          <div>
+            {% csrf_token %}
+            {{ form }}
+            {{ x }}
+          </div>
+
+
+          <button type="submit">Submit</button>
+
+        </form>
+
+
+<!--
+        <form action="" method="get">
           Hae tapahtumaa:<br>
           <input type="text" name="hakusana"><br>
           <input type="submit" value="Hae">
         </form>
       </div>
-
+-->
       <h2><a href=""> Tapahtumat: </a></h2>
       {% for tapahtuma in tapahtumalista %}
         <div>
